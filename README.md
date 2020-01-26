@@ -1,2 +1,2 @@
-# squareBillingMicroservice
-Sinatra oriented billing microservice that works with SQLite.
+# squareAppointmentSaaS
+Sinatra oriented appointment microservice that works with SQLite and takes Square payments.
