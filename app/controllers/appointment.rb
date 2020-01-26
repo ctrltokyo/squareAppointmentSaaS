@@ -27,10 +27,10 @@ class Appointment
   end
 
   def lookup_specific
-    result = @@customer.where(id: @cust_id, name: @cust_name, email: @cust_email, timezone: @cust_timezone)
+    @@customer.where(id: @cust_id, name: @cust_name, email: @cust_email, timezone: @cust_timezone)
   end
 
   def lookup_all
-    result = @@customer.all
+    @@customer.all
   end
 end
