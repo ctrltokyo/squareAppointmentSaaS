@@ -2,8 +2,8 @@ Sequel.migration do
   up do
     create_table(:appointment) do
       primary_key :id
-      Integer :appointment_sender, null: false
-      Integer :appointment_receiver, null: false
+      foreign_key :appointment_sender, :customer, null: false, on_delete: :cascade
+      foreign_key :appointment_receiver, :customer, null: false, on_delete: :cascade
       String :appointment_name, null: false
       String :appointment_time, null: false
       FalseClass :appointment_accepted

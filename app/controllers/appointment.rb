@@ -23,6 +23,7 @@ class Appointment
         appointment_time: @time.to_s,
         appointment_accepted: (!!@appointment_accepted),
     )
+    @@no_of_appointments = @@no_of_appointments + 1
     puts "We've stored " + @@no_of_customers.to_s + "!"
   end
 
