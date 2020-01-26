@@ -15,7 +15,7 @@ class Appointment
   end
 
   def store
-    puts "Storing new appointment with " + @sender.to_s + " " + @receiver.to_s + " " + @name.to_s + "." + @time.to_s + "." + @appointment_accepted.to_s + "."
+    puts "Storing new appointment with " + @sender.to_s + " " + @receiver.to_s + " " + @name.to_s + "." + @time.to_s + "." + @accepted.to_s + "."
     @@appointment.insert(
         appointment_sender: @sender.to_i,
         appointment_receiver: @receiver.to_s,
@@ -24,14 +24,14 @@ class Appointment
         appointment_accepted: (!!@appointment_accepted),
     )
     @@no_of_appointments = @@no_of_appointments + 1
-    puts "We've stored " + @@no_of_customers.to_s + "!"
+    puts "We've stored " + @@no_of_appointments.to_s + "!"
   end
 
   def lookup_specific
-    @@customer.where(id: @cust_id, name: @cust_name, email: @cust_email, timezone: @cust_timezone)
+    @@appointment.where(id: @sender, name: @receiver, email: @name, timezone: @time, accepted: @accepted)
   end
 
   def lookup_all
-    @@customer.all
+    @@appointment.all
   end
 end

@@ -21,6 +21,7 @@ class Customer
         customer_email: @cust_email.to_s,
         customer_timezone: @cust_timezone.to_s,
     )
+    @@no_of_customers = @@no_of_customers + 1
     puts "We've stored " + @@no_of_customers.to_s + "!"
   end
 
